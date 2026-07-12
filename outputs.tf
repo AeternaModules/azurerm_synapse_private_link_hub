@@ -1,3 +1,7 @@
+output "synapse_private_link_hubs_id" {
+  description = "Map of id values across all synapse_private_link_hubs, keyed the same as var.synapse_private_link_hubs"
+  value       = { for k, v in azurerm_synapse_private_link_hub.synapse_private_link_hubs : k => v.id }
+}
 output "synapse_private_link_hubs_location" {
   description = "Map of location values across all synapse_private_link_hubs, keyed the same as var.synapse_private_link_hubs"
   value       = { for k, v in azurerm_synapse_private_link_hub.synapse_private_link_hubs : k => v.location }
